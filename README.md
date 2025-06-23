@@ -14,8 +14,12 @@ CREATE TABLE `animal` (
   `name` text(50) DEFAULT NULL,
   `class` text(200) NOT NULL,
   `legs` text(4) NOT NULL,
-PRIMARY KEY (id)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+PRIMARY KEY (id));
+
+INSERT INTO animal (id,name,class,legs) VALUES 
+(1,'lion','mammal','4');
+
+ ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 ```
 
@@ -29,6 +33,4 @@ PRIMARY KEY (id)
 
 
 
-##Success :D
-
-##Semoga Bermanfaat
+##Sekian
