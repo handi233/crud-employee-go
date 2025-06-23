@@ -6,6 +6,8 @@ Create , Read, Edit, Delete data Mysql dengan bahasa Go
 
 ##Instalasi
 
+
+
 - Buat database ber-nama **animal** dan sebuah tabel di database mysql dengan nama tabel **animal**
 
 ```
@@ -22,6 +24,9 @@ INSERT INTO animal (id,name,class,legs) VALUES
  ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 ```
+Alamat API Database = localhost:8080/v1/animal
+
+```
 
 - lanjut ketikan perintah ini di terminal atau di git command
 
@@ -31,6 +36,7 @@ INSERT INTO animal (id,name,class,legs) VALUES
 
  ```go run main.go ```
 
-
+Note : sebelum menjalankan project 
+yaitu dengan membuat database terlebih dahulu di mysql / maria db dengan mengaktifkan apache ,dan mysql di xampp apps
 
 ##Sekian
