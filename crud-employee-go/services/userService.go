@@ -38,7 +38,7 @@ func CreateUser(w http.ResponseWriter, r *http.Request) {
 	}
 	defer db.Close()
 
-	statement, err := db.Prepare("INSERT INTO animal (id, name, class, legs) VALUES (?, ?, ?,?)")
+	statement, err := db.Prepare("INSERT INTO animal (name, class, legs) VALUES (?, ?, ?)")
 	if handleGenericError(w, "Failed to create statement!", err) {
 		return
 	}
@@ -50,7 +50,7 @@ func CreateUser(w http.ResponseWriter, r *http.Request) {
 	}
 
 	createdID, err := result.LastInsertId()
-	if handleGenericError(w, "Failed to retrieve last insert ID!", err) {
+	if handleGenericError(w, "Failed to denied last insert ID!", err) {
 		return
 	}
 
@@ -92,7 +92,7 @@ func GetUserByID(w http.ResponseWriter, r *http.Request) {
 	params := mux.Vars(r)
 
 	ID, err := strconv.ParseUint(params["id"], 10, 32)
-	if handleGenericError(w, "Failed to convert parameter to integer", err) {
+	if handleGenericError(w, "Failed to 404 Not Found", err) {
 		return
 	}
 
@@ -180,7 +180,7 @@ func DeleteUser(w http.ResponseWriter, r *http.Request) {
 	}
 	defer statement.Close()
 
-	if _, err := statement.Exec(ID); handleGenericError(w, "Failed to execute statement!", err) {
+	if _, err := statement.Exec(ID); handleGenericError(w, "Failed to doesn't exist !", err) {
 		return
 	}
 
